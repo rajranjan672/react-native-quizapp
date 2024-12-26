@@ -9,7 +9,9 @@ const QuizList = ({ navigation }) => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const response = await axios.get('http://192.168.189.182:3001/quizzes');
+        // const response = await axios.get('http://localhost:3001/quizzes'); --for android emulator
+
+        const response = await axios.get('http://192.168.189.182:3001/quizzes'); //for expo app use your pc address
         setQuizzes(response.data);
       } catch (error) {
         console.error('Error fetching quizzes:', error);
